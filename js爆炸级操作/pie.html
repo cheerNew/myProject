@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="js/echarts.min.js" ></script>
+		<style>
+			.main{
+				width: 200px;
+				height: 200px;
+				border:1px solid #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main" id="chart"></div>
+	</body>
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts图表
+		var myChart = echarts.init(document.getElementById('chart')); 
+	 	option = {
+	 		color:'#F3F7FA',
+	        series: [
+	            {
+	                name: '百分比100%',
+	                type: 'gauge',
+	                //半径
+	                radius: 80,
+	                //起始角度。圆心 正右手侧为0度，正上方为90度，正左手侧为180度。
+	                startAngle: 220,
+	                //结束角度。
+	                endAngle: -40,
+	                center: ['50%', '50%'],
+	                //仪表盘轴线相关配置。
+	                axisLine: {            // 坐标轴线
+	                    show:false,
+	                    lineStyle: {       // 属性lineStyle控制线条样式
+	                        width:1,
+	                        color:[[1, '#F3F7FA']],
+	                        shadowColor: 'white',
+	                        shadowBlur: 10,
+	                        shadowOffsetX:0,
+	                    }
+	                },
+	                //分隔线样式。
+	                splitLine: {
+	                    show: false,
+	                },
+	                //刻度样式
+	                axisTick: {
+	                    show: false,
+	                },
+	                //刻度标签。
+	                axisLabel: {
+	                    show:false,
+	                },
+	                title: {
+	                    show: true,
+	                    offsetCenter: [0, '10%'], // x, y，单位px   国内和家享
+	                    textStyle: {
+	                        color: '#288FFE', //字体颜色  蓝色
+	                        fontSize: 15,
+	                    }
+	                },
+	                //仪表盘详情，用于显示数据。
+	                detail: {
+	                    show: true,
+	                    offsetCenter: [0, '-25%'],
+	                    formatter: '流量剩余',// '{value}%'
+	                    textStyle: {
+	                        fontSize: 13,
+	                        color:'#8E8F91'
+	                    }
+	                },
+	                data: [
+	                    { value:21,name:'国内和家享'},
+	                ],
+	                zlevel:1,
+	                //隐藏仪表盘指针
+	                itemStyle:{
+	                    normal:{
+	                        color:"transparent",
+	                    }
+	                }
+	            },
+	            {
+	                name: '进度条',
+	                type: 'gauge',
+	                //半径
+	                radius: 80,
+	                //起始角度。圆心 正右手侧为0度，正上方为90度，正左手侧为180度。
+	                startAngle: 220,
+	                //结束角度。
+	                endAngle: -40,
+	                center: ['50%', '50%'],
+	                //仪表盘轴线相关配置。
+	                axisLine: {            // 坐标轴线
+	                    show:true,
+	                    lineStyle: {       // 属性lineStyle控制线条样式
+	                        width: 15,
+	                        color:[[0.3, '#007AFF'],[1,'#F3F7FA']], //进度条百分比   蓝色
+	                        shadowOffsetX:0,
+	                    }
+	                },
+	                //分隔线样式。
+	                splitLine: {
+	                    show:false,
+	                    length:30,
+	                    lineStyle:{
+	                        color: 'transparent',
+	                        width:0
+	                    }
+	                },
+	                //刻度样式
+	                axisTick: {
+	                    show: false,
+	                },
+	                //刻度标签。
+	                axisLabel: {
+	                    show:false,
+	                },
+	                //仪表盘标题。
+	                title: {
+	                    show: false,
+	                },
+	                //仪表盘详情，用于显示数据。
+	                detail: {
+	                    show: true,
+	                    offsetCenter: [0, '80%'],
+	                    formatter:'国内和家享',
+	                    textStyle: {
+	                        color: '#181818', //#181818
+	                        fontSize: 14
+	                    }
+	                },
+	                data: [
+	                    {name:'数量', value:'n'},
+	                ],
+	                zlevel:1
+	            },
+	            
+	            {
+				name: '访问来源',
+				type: 'pie',
+				radius: 50,
+				avoidLabelOverlap: false,
+				legendHoverLink: false,
+				hoverAnimation: false,
+				hoverOffset: 0,
+				labelLine: {
+					normal: {
+						show: false
+					}
+				},
+				data: [
+				{value:1548, name:''}
+				],
+			}
+	        ]
+	    };
+		// 为echarts对象加载数据
+		myChart.setOption(option);
+	</script>
+</html>

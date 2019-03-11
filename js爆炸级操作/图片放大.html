@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	body { font:12px "宋体"; padding:50px; }
+	img { border:none;}
+	#two { background:#eee;   line-height:30px;  position:absolute; border:5px solid #ccc; text-align:center; font-size:14px; font-weight:bold;}
+</style>
+
+<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){	
+    var x = 5;	
+	var y = 10;
+	$(".box").mouseover(function(e){
+			this.myTitle = this.title;
+			this.title = "";
+			var imgTitle;
+			if (this.myTitle){
+					imgTitle = "<br />"+this.myTitle;
+			}else{
+					imgTitle = "";
+			}
+			var hdw = "<div id='two'><img src='"+ this.href +"' alt='hdw' />"+imgTitle+"<\/div>";
+			$("body").append(hdw);
+			$("#two").css({"left":(e.pageX+x)+"px","top":(e.pageY+y)+"px"	}).show("fast");
+		}).mouseout(function(){
+			this.title = this.myTitle;	
+			$("#two").remove();	
+		}).mousemove(function(e){
+			$("#two").css({"left":(e.pageX+x)+"px","top":(e.pageY+y)+"px"	});
+		});
+	});
+</script>
+</head>
+
+<body>
+	<a href="img/2.jpg" class="box" title="图片放大"><img src="img/2.jpg" alt="hdw" width="200" height="200" /></a>
+</body>
+</html>

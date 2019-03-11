@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style lang="less" scoped>
+			.text-red {
+				color: #fa5555;
+			}
+			
+			.text-gray {
+				color: #999;
+			}
+			
+			.m-r {
+				margin-right: 20px;
+			}
+			
+			.m-r-xs {
+				margin-right: 5px;
+			}
+			/*备案表*/
+			.record-sheet tr {
+				border-bottom: 1px solid #999;
+			}
+			.record-sheet th {
+				padding: 20px;
+				font-size: 16px;
+			}
+			.record-sheet td {
+				border-right: 1px solid #999;
+				padding: 0 5px;
+				border-top: 1px solid #999;
+			}
+			.record-sheet input {
+				width: 100%;
+				padding: 12px 0;
+				border: none;
+				outline: none;
+			}
+			.record-sheet textarea {
+				width: 100%;
+				border: none;
+				outline: none; //去掉轮廓
+				resize: none; //去掉右下角灰色标识
+			}
+			.record-sheet {
+				text-align: center;
+				width: 65%;
+				margin: 40px auto 0 auto;
+				border: 1px solid #999;
+			}
+			
+			.sign-box {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.sign-box-date .year {
+				width: 20%;
+				text-align: center;
+			}
+			.sign-box-date .month {
+				width: 8%;
+				text-align: center;
+			}
+			.sign-box-date {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 10px;
+			}
+			.pointer {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<comm_breadcrumb_bar>
+				<el-breadcrumb>
+					<el-breadcrumb-item>减员</el-breadcrumb-item>
+					<el-breadcrumb-item>新增</el-breadcrumb-item>
+				</el-breadcrumb>
+			</comm_breadcrumb_bar>
+			<comm_action_bar>
+				<el-button type="primary">保存并上报</el-button>
+				<el-button>仅保存</el-button>
+			</comm_action_bar>
+			<comm_main>
+				<el-row>
+					<span class="text-red m-r-xs">*</span><span class="m-r text-gray">减员类型</span>
+					<el-radio-group v-model="radio2">
+						<el-radio :label="3">退休</el-radio>
+						<el-radio :label="6">死亡</el-radio>
+						<el-radio :label="9">调出</el-radio>
+						<el-radio :label="11">离职</el-radio>
+					</el-radio-group>
+				</el-row>
+				<table class="record-sheet">
+					<thead>
+						<tr style="border-bottom-color: #dfe6ec">
+							<th colspan="8">北京市密云区行政机关(事业单位)减少人员备案表</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="no-b-r">呈报单位:</td>
+							<td class="no-b-r" colspan="3">
+								<input type="text" />
+							</td>
+							<td class="no-b-r" width="15%">填报时间:</td>
+							<td class="no-b-r" colspan="3">
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>减员单位</td>
+							<td colspan="5">
+								<input type="text" />
+							</td>
+							<td width="20%" rowspan="4" class="pointer">
+								图片
+							</td>
+						</tr>
+						<tr>
+							<td>编制数</td>
+							<td colspan="2">
+								<input type="text" />
+							</td>
+							<td>减员后实有人数</td>
+							<td colspan="2">
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td class="no-b-r">编制类型</td>
+							<td class="no-b-r" colspan="2">
+								<input type="text" />
+							</td>
+							<td class="no-b-r">事业</td>
+							<td class="no-b-r" colspan="2">
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>姓名</td>
+							<td>
+								<input type="text" />
+							</td>
+							<td width="10%">性别</td>
+							<td>
+								<input type="text" />
+							</td>
+							<td>出生年月</td>
+							<td>
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>学历</td>
+							<td>
+								<input type="text" />
+							</td>
+							<td width="10%">身份</td>
+							<td>
+								<input type="text" />
+							</td>
+							<td>身份证号码</td>
+							<td colspan="2">
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">岗位及职务(职称)</td>
+							<td colspan="6">
+								<input type="text" />
+							</td>
+						</tr>
+						<tr>
+							<td>减员原因</td>
+							<td colspan="7">
+								<textarea rows="8"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>所在单位意见</td>
+							<td colspan="7">
+								<textarea rows="8"></textarea>
+								<div>
+									<p>(单位盖章)</p>
+									<div class="sign-box-date">
+										<input type="text" class="year" />年
+										<input type="text" class="month" />月
+										<input type="text" class="month" />日
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>机构编制部门审核意见</td>
+							<td colspan="7">
+								<textarea rows="8"></textarea>
+								<div class="sign-box">
+									<p>经办人:</p>
+									<div class="sign-box-date">
+										<input type="text" class="year" />年
+										<input type="text" class="month" />月
+										<input type="text" class="month" />日
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</comm_main>
+		</div>
+	</body>
+	<script>
+		/*export default {
+					data() {
+						return {
+							radio2: 3,
+							isUpload: false
+						}
+					},
+					methods: {
+						showUpload() {
+							let vm = this;
+							vm.isUpload = true
+						}
+					}
+				}*/
+	</script>
+
+</html>

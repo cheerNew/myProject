@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>轮播</title>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.banner.js"></script>
+		<style type="text/css"> 
+			* {
+			 	margin: 0;
+			 	padding: 0;
+			 	list-style-type: none;
+			 }
+			 .banner {
+			 	width: 100%;
+			 	overflow: hidden;
+			 	height: 450px;
+			 	position: relative
+			 }
+			 
+			 .banList {
+			 	position: absolute;
+			 	left: 50%;
+			 	margin-left: -960px;
+			 	height: 450px
+			 }
+			 
+			 .banList li {
+			 	height: 450px;
+			 	opacity: 0;
+			 	position: absolute;
+			 	transform: scale(0);
+			 	transition: transform 0.5s ease 0s, opacity 1.5s ease 0s;
+			 	z-index: 1;
+			 }
+			 
+			 .banList li.active {
+			 	opacity: 1;
+			 	transform: scale(1);
+			 	z-index: 2;
+			 }
+			 
+			 .fomW {
+			 	position: absolute;
+			 	bottom: 20px;
+			 	left: 50%;
+			 	height: 20px;
+			 	z-index: 9;
+			 	width: 1000px;
+			 	margin-left: -500px
+			 }
+			 
+			 .jsNav {
+			 	text-align: center;
+			 }
+			 
+			 .jsNav a {
+			 	display: inline-block;
+			 	background: #fff;
+			 	width: 15px;
+			 	height: 15px;
+			 	border-radius: 50%;
+			 	margin: 0 5px;
+			 }
+			 .jsNav a.current {
+			 	background: #fc8f0f;
+			 	cursor: pointer
+			 }
+			 .banner-title {
+				text-align: center;
+				position: absolute;
+				top: 30%;
+				left: 5%;
+				color: #fff;
+				width: 90%;
+				word-wrap: break-word;
+			}
+			.banner-title1 {
+				font-size: 4rem;
+			}
+			
+			.banner-title2 {
+				font-size: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="banner">
+			<ul class="banList">
+				<li class="active">
+					<a href="javascript:void(0);"><img src="img/AD0I6ISlBRACGAAg_cPy0QUoivinywYwgA84igU.jpg"/></a>
+					<div class="banner-title">
+						<p class="banner-title1">——— 给孩子美好的未来 ———</p>
+						<p class="banner-title2">选择比努力更重要，因为选择对了 就意味着未来离梦想近了</p>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);"><img src="img/AD0I6ISlBRACGAAgnMXy0QUo34fdnwIwgA84igU.jpg"/></a>
+					<div class="banner-title">
+						<p class="banner-title1">——— 教育不是灌输 ———</p>
+						<p class="banner-title2">教育是点燃智慧的火焰，是个性、特长 素质的培养！</p>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);"><img src="img/banner_2.jpg"/></a>
+					<div class="banner-title">
+						<p class="banner-title1">——— 教育不是灌输 ———</p>
+						<p class="banner-title2">教育是点燃智慧的火焰，是个性、特长 素质的培养！</p>
+					</div>
+				</li>
+			</ul>
+			<div class="fomW">
+				<div class="jsNav">
+					<a href="javascript:;" class="trigger current"></a>
+					<a href="javascript:;" class="trigger"></a>
+					<a href="javascript:;" class="trigger"></a>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			$(".banner").swBanner();
+		});
+	</script>
+</html>

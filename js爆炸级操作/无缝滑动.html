@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>无缝滚动</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<style>
+			html,body{
+				width: 100%;
+				height: auto;
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			#center_right_bottom {
+			    width: 80%;
+			    background: #FFF;
+			    overflow: hidden;
+			    margin: 0 auto;
+			}
+			#gundong {
+			    float: left;
+			    width: 450%;
+			}
+			#gundong a{
+				padding-left: 20px;
+				text-decoration: none;
+				color: #333;
+			}
+			#gundong1 ul,#gundong2 ul{
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#gundong1 ul li,#gundong2 ul li{
+			    float: left;
+			    text-align: center;
+			}
+			#gundong1 ul li p,#gundong2 ul li p{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="center_right_bottom">
+			<div id="gundong">
+				<div id="gundong1">
+					<ul>
+						<li>
+							<a href="#">
+								<img src="thumbnails/img12.jpg" border="0" width="176" height="200" />
+							</a>
+							<p>高级教师</p>
+						</li>
+						<li>
+							<a href="#">
+								<img src="thumbnails/img13.jpg" border="0" width="176" height="200" />
+								<p>高级教师</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="thumbnails/img14.jpg" border="0" width="176" height="200" />
+								<p>高级教师</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="thumbnails/img15.jpg" border="0" width="176" height="200" />
+								<p>高级教师</p>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="thumbnails/img15.jpg" border="0" width="176" height="200" />
+								<p>高级教师</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="gundong2"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var speed=10;
+		var tab=document.getElementById("center_right_bottom");
+		var tab1=document.getElementById("gundong1");
+		var tab2=document.getElementById("gundong2");
+		tab2.innerHTML=tab1.innerHTML;
+		function center_right_bottom()
+		{
+			if(tab2.offsetWidtch-tab.scrollLeft<=0)
+			 {
+				tab.scrollLeft=tab.scrollLeft-tab1.offsetWidth;
+			 }
+			else
+			{
+				 tab.scrollLeft++;
+			}
+		}
+		var MyMar=setInterval(center_right_bottom,speed);
+		tab.onmouseover=function() {clearInterval(MyMar)};
+		tab.onmouseout=function() {MyMar=setInterval(center_right_bottom,speed)};
+	</script>
+</html>

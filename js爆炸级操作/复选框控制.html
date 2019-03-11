@@ -1,0 +1,70 @@
+<head>
+	<title>Untitled Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+	<script type="text/javascript">
+		var checkedBOX=[];
+		function checkboxOnclick(ckvalue)
+		{
+		    var p=0;
+		    var ck=document.getElementsByName("question2");
+		    for(i=0;i<ck.length;i++){
+		        if(ck[i].checked) {
+		            p++;
+		        }
+		    }
+		    console.log(ck[ckvalue-1].checked);
+		
+		    if(ck[ckvalue-1].checked){
+		        checkedBOX.push(ckvalue);
+		        console.log(checkedBOX+"true");
+		    }else{
+		        for(i=0;i<checkedBOX.length;i++){
+		            if(checkedBOX[i]==ckvalue){
+		                checkedBOX.splice(i, 1);
+		            }
+		        }
+		        console.log(checkedBOX+"false");
+		    }
+		
+		    if(p>3) {
+		        ckvalue = checkedBOX[0];
+		        $('input[value="' + ckvalue + '"]:checked').attr("checked", false);
+		        checkedBOX.splice(0, 1);
+		        console.log(checkedBOX+"del");
+		    }
+		    console.log(checkedBOX+"last");
+		}
+		/*var checkedBOX=[];
+		function cktest()
+        {
+            var p=0;
+            var ck=document.getElementsByName("test");
+            for(i=0;i<ck.length;i++)
+            {
+                if(ck[i].checked) p++;
+            }
+            checkedBOX.push(p);
+            if(p>3)
+            {
+               ckvalue = checkedBOX[0];
+               $('input[target="'+ckvalue+'"]:checked').attr("checked",false);
+               checkedBOX.splice(0,1);
+            }
+        }*/
+	</script>
+</head>
+
+<body>
+	<form>
+		<input type="checkbox" name="question2" value="1" target='1' onclick="checkboxOnclick(this.value)" />1
+		<input type="checkbox" name="question2" value="2" target='2' onclick="checkboxOnclick(this.value)" />2
+		<input type="checkbox" name="question2" value="3" target='3' onclick="checkboxOnclick(this.value)" />3
+		<input type="checkbox" name="question2" value="4" target='4' onclick="checkboxOnclick(this.value)" />4
+		<input type="checkbox" name="question2" value="5" target='5' onclick="checkboxOnclick(this.value)" />5
+		<input type="checkbox" name="question2" value="6" target='6' onclick="checkboxOnclick(this.value)" />6
+		<input type="checkbox" name="question2" value="7" target='7' onclick="checkboxOnclick(this.value)" />7
+		<input type="checkbox" name="question2" value="8" target='8' onclick="checkboxOnclick(this.value)" />8
+	</form>
+</body>
+</html>

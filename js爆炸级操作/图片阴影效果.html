@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>图片阴影效果</title>
+<style>
+#div{ margin:0 auto; width:500px; height:333px;}
+	img
+	{
+	opacity:0.4;
+	filter:alpha(opacity=40); transition:1s; box-shadow:0px 5px 5px #444; border-radius:8px; /* For IE8 and earlier */
+	}
+	img:hover
+	{
+	opacity:1.0;
+	filter:alpha(opacity=100);cursor:pointer; /* For IE8 and earlier */
+	}
+</style>
+</head>
+
+<body>
+	<div id="div"><img src="img/1.jpg" width="500" height="333" /></div>
+</body>
+</html>

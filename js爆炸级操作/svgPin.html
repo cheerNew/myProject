@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<style>
+			courseList: {
+	          percent: 10,
+	          speed: 282.743,
+	          noSpeed: 282.743
+	        }
+			.course_progress {
+			    position: absolute;
+			    left: 50%;
+			    top: 50%;
+			    width: 100px;
+			    height: 100px;
+			    text-align: center;
+			    margin-left: -50px;
+			    margin-top: -50px;
+			  }
+			  .course_progress span{
+			  	  font-size: 10px;
+			      color: #d1d1d1;
+			  }
+			  .all-num{
+			  	position: absolute;
+			    top: 30%;
+			    left: 25%;
+			  }
+		</style>
+	</head>
+
+	<body>
+		<div class="course_progress">
+            <svg viewBox="0 0 100 100">
+              <path d="M 50 50 m 0 -45 a 45 45 0 1 1 0 90 a 45 45 0 1 1 0 -90" stroke="#e5e9f2" stroke-width="10"
+                    fill="none"></path>
+              <path d="M 50 50 m 0 -45 a 45 45 0 1 1 0 90 a 45 45 0 1 1 0 -90" stroke-linecap="round" stroke="#0095ff"
+                    stroke-width="10" fill="none"
+                    :style="'stroke-dasharray: 282.743px ,282.743px; stroke-dashoffset: 212.058px; transition: stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease;'"></path>
+              <text text-anchor="start" x="40" y="50" fill="#8cccee" style="font-size:12px;">
+              </text>
+            </svg>
+            <div class="all-num">
+              <div>
+                <label>42</label>/45
+              </div>
+              <span>出勤人数</span>
+            </div>
+          </div>
+	</body>
+</html>

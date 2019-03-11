@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>上传图片</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: auto;
+				margin: 0;
+				padding: 0;
+				background-color: #F5F5F5;
+				color: #333;
+			}
+			.uploadBox{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ccc;
+				margin: 3%;
+				position: relative;
+			}
+			.uploadBox img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<label>照相机</label>
+	    <input type="file" id='image' accept="image/*" capture='camera'>
+	    <br>
+	    <label>摄像机</label>
+	    <input type="file" id='video' accept="video/*" capture='camcorder'>-->
+	    <div class="uploadBox" align="center"><input id="upload" type="file" accept="image/*" capture="camera" style="filter:alpha(opacity=1);opacity:0;width: 100%;height: 100%; position: absolute;"><img class="img_wrap" src="img/add.jpg" /></div>
+	</body>
+	<script>
+		/*//判断ios，如果是ios就去掉capture属性.
+		var file = document.querySelector('input');
+        if (getIos()) {
+            file.removeAttribute("capture");
+        }
+        function getIos() {
+            var ua=navigator.userAgent.toLowerCase();
+            if (ua.match(/iPhone\sOS/i) == "iphone os") {
+                return true;
+            } else {
+                return false;
+            }
+        }*/
+		var demo_h5_upload_ops = {
+			init: function() {
+				this.eventBind();
+			},
+			eventBind: function() {
+				var that = this;
+				$("#upload").change(function() {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						that.compress(this.result);
+					};
+					reader.readAsDataURL(this.files[0]);
+				});
+			},
+			compress: function(res) {
+				var that = this;
+				var img = new Image(),
+					maxH = 300;
+
+				img.onload = function() {
+					var cvs = document.createElement('canvas'),
+						ctx = cvs.getContext('2d');
+
+					if(img.height > maxH) {
+						img.width *= maxH / img.height;
+						img.height = maxH;
+					}
+					cvs.width = img.width;
+					cvs.height = img.height;
+
+					ctx.clearRect(0, 0, cvs.width, cvs.height);
+					ctx.drawImage(img, 0, 0, img.width, img.height);
+					var dataUrl = cvs.toDataURL('image/jpeg', 1);
+					$(".img_wrap").attr("src", dataUrl);
+					$(".img_wrap").show();
+					// 上传略
+					that.upload(dataUrl);
+				};
+
+				img.src = res;
+			},
+			upload: function(image_data) {
+				/*这里写上次方法,图片流是base64_encode的*/
+			}
+		};
+		$(document).ready(function() {
+			demo_h5_upload_ops.init();
+		});
+	</script>
+</html>

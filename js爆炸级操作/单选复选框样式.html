@@ -1,0 +1,165 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>移动单选按钮</title>
+    <style>
+        /*纯CSS写法*/
+        .checkbox-group input{display:none;opacity:0;}
+        .checkbox-group input[type=checkbox]+label, .checkbox-group input[type=radio]+label {
+            line-height: 1;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin:2px;
+        }
+        .checkbox-group input[type=checkbox]+label:before, .checkbox-group input[type=radio]+label:before {
+            line-height: 20px;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            content: '';
+            color: #fff;
+            border: 1px solid #dce4e6;
+            background-color: #f3f6f8;
+            border-radius: 3px;
+        }
+        .checkbox-group input[type=checkbox]:checked+label:before,.checkbox-group input[type=radio]:checked+label:before{
+            /*content:'\2022';圆点*/
+            content:'\2713';
+            color:#fff;
+            background-color: #31b968;
+            border-radius: 3px;
+            font-size:16px;
+            text-align: center;
+            border-color: #31b968;
+        }
+        /*使用背景图片写法*/
+        .xuan-group input{display:none;opacity:0;}
+        .xuan-group input[type=checkbox]+label, .xuan-group input[type=radio]+label {
+            line-height: 1;
+            position: relative;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin:2px;
+        }
+        .xuan-group input[type=checkbox]+label:before, .xuan-group input[type=radio]+label:before {
+            line-height: 20px;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            content: '';
+            color: #fff;
+            border: 1px solid #dce4e6;
+            background-color: #f3f6f8;
+            border-radius: 3px;
+        }
+        .xuan-group input[type=checkbox]:checked+label:before,.xuan-group input[type=radio]:checked+label:before{
+            content:' ';
+            background:#e02222 url(img/u1688.png) 2px 1px no-repeat;
+            background-size:80% 80%;
+        }
+    </style>
+</head>
+<body>
+    <div style="border:5px solid red;">
+        <p style="font-size:20px">纯CSS写法：</p>
+        <p>第一组单选</p>
+        <div class="checkbox-group">
+            <input type="radio" id="one" name="dan"/>
+            <label for="one">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="radio" id="two" name="dan"/>
+            <label for="two">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="radio" id="three" name="dan"/>
+            <label for="three">记住密码</label>
+        </div>
+        <p>第二组单选</p>
+        <div class="checkbox-group">
+            <input type="radio" id="one2" name="dan2"/>
+            <label for="one2">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="radio" id="two2" name="dan2"/>
+            <label for="two2">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="radio" id="three2" name="dan2"/>
+            <label for="three2">记住密码</label>
+        </div>
+        <p>第一组复选</p>
+        <div class="checkbox-group">
+            <input type="checkbox" id="one3" name="fu"/>
+            <label for="one3">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="two3" name="fu"/>
+            <label for="two3">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="three3" name="fu"/>
+            <label for="three3">记住密码</label>
+        </div>
+        <p>第二组复选</p>
+        <div class="checkbox-group">
+            <input type="checkbox" id="one4" name="fu2"/>
+            <label for="one4">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="two4" name="fu2"/>
+            <label for="two4">记住密码</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" id="three4" name="fu2"/>
+            <label for="three4">记住密码</label>
+        </div>
+    </div>
+ 
+    <div style="border:5px solid blue;">
+        <p style="font-size:20px">使用背景图片写法：</p>
+        <p>第一组单选</p>
+        <div class="xuan-group">
+            <input type="radio" id="radioOne" name="picRadio"/>
+            <label for="radioOne">勾选</label>
+        </div>
+        <div class="xuan-group">
+            <input type="radio" id="radioTwo" name="picRadio"/>
+            <label for="radioTwo">勾选</label>
+        </div>
+        <div class="xuan-group">
+            <input type="radio" id="radioThree" name="picRadio"/>
+            <label for="radioThree">勾选</label>
+        </div>
+        <p>第一组复选</p>
+        <div class="xuan-group">
+            <input type="checkbox" id="radioOne2" name="picBox"/>
+            <label for="radioOne2">勾选</label>
+        </div>
+        <div class="xuan-group">
+            <input type="checkbox" id="radioTwo2" name="picBox"/>
+            <label for="radioTwo2">勾选</label>
+        </div>
+        <div class="xuan-group">
+            <input type="checkbox" id="radioThree2" name="picBox"/>
+            <label for="radioThree2">勾选</label>
+        </div>
+    </div>
+</body>
+</html>

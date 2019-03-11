@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.progress{ width:300px; height:20px; border-radius:10px; background-color:#CCC;}
+	.progress-bar{ background-color:#0F0; height:20px; border-radius:10px; text-align:center; font-size:12px; line-height:20px;}
+</style>
+<script>
+	window.onload=function()
+	{
+		var sun=0;
+		var bar=document.getElementById("bar");
+		var t;
+		t=window.setInterval(function()
+		{
+			sun+=10;
+			
+			if(sun==200)
+			{
+				bar=window.clearInterval(t);
+				bar=innterHTML="加载了80%";
+			}else
+			{
+				bar.style.width=sun+"px";
+			}	
+		},60);
+			
+	}
+</script>
+</head>
+
+<body>
+	<div class="progress">
+        <div class="progress-bar" id="bar" style="width:0%;">
+            加载中
+        </div>
+	</div>
+</body>
+</html>

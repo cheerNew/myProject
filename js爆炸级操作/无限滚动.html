@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>无限滚动</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.js" ></script>
+		<style>
+			body,
+			{
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			.containerNew{
+				width: 80%;
+				margin: 0 auto;
+				border: 1px solid #eee;
+				padding: 1% 2%;
+			}
+			.bdr {
+				width: 100%;
+				height: auto;
+			}
+			
+			.tempWrap {
+				width: 100% !important;
+			}
+			.hceg {
+				float: left;
+				width: 176px;
+				margin-left: 20px;
+				text-align: center;
+				line-height: 2;
+				font-family: "微软雅黑";
+				font-size: 14px;
+			}
+			.ul-style{
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="containerNew">
+			<div class="bd">
+				<div id="leftMarquee" class="infoList">
+					<div class="bdr">
+						<ul class="ul-style">
+							<li class="hceg"><img src="img/u164.JPG" width="176" height="200">华中师大一附中高级教师</li>
+							<li class="hceg"><img src="img/u173.JPG" width="176" height="200">华中师大一附中高级教师</li>
+							<li class="hceg"><img src="img/u1926.jpg" width="176" height="200">华中师大一附中高级教师</li>
+							<li class="hceg"><img src="img/u1928.jpg" width="176" height="200">华中师大一附中高级教师</li>
+							<li class="hceg"><img src="img/u214.jpg" width="176" height="200">华中师大一附中高级教师</li>
+							<li class="hceg"><img src="img/u223.jpg" width="176" height="200">华中师大一附中高级教师</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$("#leftMarquee").slide({
+			mainCell: ".bdr ul",
+			effect: "leftMarquee",
+			vis: 5,
+			interTime: 40,
+			autoPlay: true
+		});
+	</script>
+</html>

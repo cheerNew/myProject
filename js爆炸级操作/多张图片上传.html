@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>多张上传图片</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/upload.js" ></script>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: auto;
+				margin: 0;
+				padding: 0;
+				background-color: #F5F5F5;
+				color: #333;
+			}
+			.mainBox{
+				width: 100%;
+				height: auto;
+				background-color: #fff;
+			}
+			.uploadUl{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.addBox{
+				float: left;
+			    position: relative;
+			    width: 19%;
+			    height: 77px;
+			    border: 1px solid #d9d9d9;
+			}
+			.addBox::after{
+				position: absolute;
+				border-right: 1px solid #d9d9d9;
+				content: "";
+				left: 47%;
+				width: 1%;
+				height: 80%;
+				top: 10%;
+			}
+			.addBox::before{
+				position: absolute;
+				border-top: 1px solid #d9d9d9;
+				content: "";
+				left: 10%;
+				width: 80%;
+				height: 1%;
+				top: 47%;
+			}
+			.inputStyle{
+				position: absolute;
+			    z-index: 1;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			    opacity: 0;
+			    -webkit-tap-highlight-color: rgba(0,0,0,0);
+			}
+			.uploadLi{
+				float: left;
+				margin-left: 1%;
+			    width: 19%;
+			    height: 77px;
+			    background: no-repeat 50%;
+			    background-size: cover;
+			}
+			.uploadLi img{
+				width: 100%;
+				height: 100%;
+			}
+			.uploadBox{
+				width: 100%;
+				overflow: hidden;
+				padding: 1%;
+			    position: relative;
+			    -webkit-box-align: center;
+			    -webkit-align-items: center;
+			    align-items: center;
+			    height: 90px;
+			}
+			.ejectImgBox{
+				width: 90%;
+				height: 90%;
+				position: fixed;
+				overflow: hidden;
+				top: 5%;
+				bottom: 3%;
+				display: flex;
+				flex-direction: column;
+				z-index: 3;
+				background-color: #fff;
+				padding:3% 1% 5% 1%;
+				left: 5%;
+				display: none;
+				border-radius: 8px;
+			}
+			.ejectImgBox img{
+				width: 98%;
+				height: 80%;
+				margin: 5% auto;
+			}
+			.ejectBtn{
+				display: flex;
+				justify-content: space-around;
+			}
+			.ejectItem{
+				padding: 0 10%;
+				line-height: 1.8;
+				text-align: center;
+				background-color: #38ADFF;
+				top: 0;
+				color: #fff;
+				border-radius: 5px;
+				margin: 5% 0;	
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cover"></div>
+		<div class="ejectImgBox">
+			<img src="" />
+			<div class="ejectBtn">
+				<div class="ejectItem" onclick="delectBtn()">删除</div>
+				<div class="ejectItem backBtn">返回</div>
+			</div>
+		</div>
+		<div class="mainBox">
+			<div class="uploadBox">
+				<ul class="uploadUl" id="img2x"></ul>
+	            <div class="addBox">
+	                <input class="inputStyle" type="file" capture="camera" accept="image/*" onchange="previewImage1(this)" multiple="">
+	            </div>
+			</div>
+		</div>
+	</body>
+</html>

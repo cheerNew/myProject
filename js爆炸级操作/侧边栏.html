@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="css/sidebar-menu.css" />
+		<script type="text/javascript" src="js/jquery-1.11.1.js" ></script>
+		<script type="text/javascript" src="js/nva.js" ></script>
+		<script type="text/javascript" src="js/sidebar-menu.js" ></script>
+		<style>
+			@charset "utf-8";
+			body,
+			{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				font-family: "微软雅黑";
+			}
+			* {
+				padding: 0;
+				margin: 0 auto;
+				text-decoration: none;
+			}
+			html,
+			body {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				line-height: 1.5;
+			}
+			.mian {
+				width: 100%;
+				height: auto;
+			}
+			.rightBtn{
+				position: fixed;
+				display: block;
+				width: 10%;
+			    right: 2%;
+			    top: 8%;
+			    z-index: 99999;
+			}
+			.bgDiv {
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				opacity: .5;
+				position: fixed;
+				display: none;
+				z-index: 99;
+				bottom: 0;
+			}
+			.leftNav {
+				width: 60%;
+				max-width: 500px;
+				height: 100%;
+				background-color: #FCFBF9;
+				position: fixed;
+				z-index: 999;
+				top: 0;
+				left: -60%;
+				overflow: auto;
+				color: #333;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="rightBtn"><img src="img/right-btnNews.png" /></div>
+			<!--移动端nav-->
+			<div class="bgDiv"></div>
+			<div class="leftNav">
+				<ul class="sidebar-menu">
+			      <li class="treeview">
+			        <a href="#">
+			          <span>首页</span>
+			        </a>
+			      </li>
+			      <li class="treeview">
+			        <a href="#">
+			          <span>学校概况</span>
+			        </a>
+			        <ul class="treeview-menu" style="display: none;">
+			          <li><a href="#">学校概况1</a></li>
+			          <li><a href="#">学校概况2</a></li>
+			          <li><a href="#">学校概况3</a></li>
+			          </li>
+			        </ul>
+			      </li>
+			      <li>
+			        <a href="#">
+			          <span>学校历史</span>
+			        </a>
+			      </li>
+			      <li class="treeview">
+			        <a href="#">
+			          <span>校训</span>
+			        </a>
+			      </li>
+			      <li class="treeview">
+			        <a href="#">
+			          <span>校园风光</span>
+			        </a>
+			        <ul class="treeview-menu" style="display: none;">
+			          <li><a href="#">校园风光1</a></li>
+			          <li><a href="#">校园风光2</a></li>
+			          <li><a href="#">校园风光3</a></li>
+			          <li><a href="#">校园风光4</a></li>
+			        </ul>
+			      </li>
+			      <li class="treeview">
+			        <a href="#">
+			          <span>团队介绍</span>
+			        </a>
+			      </li>
+			      <li class="treeview">
+			        <a href="#">
+			          <span>联系我们</span>
+			        </a>
+			      </li>
+			    </ul>
+			</div>
+		</div>
+	</body>
+	<script>
+		$.sidebarMenu($('.sidebar-menu'));
+	</script>
+</html>

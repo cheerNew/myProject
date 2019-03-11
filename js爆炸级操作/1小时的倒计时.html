@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<script>
+			var interval;
+			var djs = function() {
+				if(!!interval) return;
+				var d = new Date("2019/3/6,0:1:0");	
+				result.innerHTML = d.getHours() + "时:" +
+					d.getMinutes() + "分:" + d.getSeconds() + "秒";
+				interval = setInterval(function() {
+					if(d.getHours() == 0 && d.getMinutes() == 0 && d.getSeconds() == 0) {
+						clearInterval(interval);
+						interval = null;
+					}
+					result.innerHTML = d.getHours() + "时:" +
+						d.getMinutes() + "分:" + d.getSeconds() + "秒";
+					d.setSeconds(d.getSeconds() - 1);
+				}, 1000);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="result">
+		</div>
+		<button onclick="djs()">
+        	倒计时
+    	</button>
+	</body>
+</html>

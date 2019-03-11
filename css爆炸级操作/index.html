@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>css爆炸级操作</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+		<style>
+			html,body {
+				box-sizing: content-box;
+				padding: 5px;
+			}
+			
+			.main {
+				width: 100%;
+				height: auto;
+				box-shadow: inherit;
+				font-size: 2em;
+			}
+			
+			.unselect {
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none
+			}
+			
+			.blur {
+				color: transparent;
+				text-shadow: 0 0 2px rgba(0, 0, 0, 0.9)
+			}
+			
+			.text-gradient {
+				background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgb(63, 52, 219)), to(rgb(233, 86, 86)));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent
+			}
+			
+			.gradient {
+				background: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+				background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+				background: -moz-linear-gradient(bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+				background: -ms-linear-gradient(bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+				background: -o-linear-gradient(bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0));
+				background: -webkit-gradient(linear, 0 100%, 0 0, from(rgba(0, 0, 0, .8)), to(rgba(0, 0, 0, 0)))
+			}
+			
+			.hide-text-n {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 3;
+				overflow: hidden
+			}
+			
+			
+			/*body,html {
+							height: 100%;
+							background: url(img/1.jpg) no-repeat left center / 50%, url(img/2.jpg) no-repeat right center / 50%
+						}*/
+			
+			.input {
+				border: 1px solid #ccc;
+				caret-color: red;
+			}
+			.main:first-letter { font-size: 4rem } 
+			
+			/*.box {
+				animation: move 1s ease forwards;
+				background-color: salmon;
+				/* animation-fill-mode: forwards; 
+			}*/
+			@keyframes move {
+				0% {
+					transform: translateY(0)
+				}
+				100% {
+					transform: translateY(200px)
+				}
+			}
+			.traingle {
+				width: 0;
+				height: 0;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-bottom: 40px solid salmon;
+			}
+			/*.box {
+				background-image:url(img/1.jpg);
+				background-size: cover;
+				-webkit-background-clip: text;
+				color: transparent;
+			}
+			div {
+				-webkit-box-reflect: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(250, 250, 250, 0)), to(rgba(250, 250, 250, 0.3)));
+				-webkit-box-reflect: -webkit-linear-gradient(rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.3));
+				-webkit-box-reflect: -moz-linear-gradient(rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.3));
+				-webkit-box-reflect: -o-linear-gradient(rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.3));
+				-webkit-box-reflect: below 0 linear-gradient(rgba(250, 250, 250, 0), rgba(250, 250, 250, 0.3));
+			}*/
+			.ball1 {
+				animation: move .6s ease-in infinite alternate;
+			}
+			
+			.ball2 {
+				animation: move .5s ease-in infinite alternate;
+			}
+			
+			.ball3 {
+				animation: move .4s ease-in infinite alternate;
+			}
+			
+			@keyframes move {
+				100% {
+					transform: translateY(30px);
+				}
+			}
+			img{
+				width: 300px;
+			}
+			img:hover {
+				filter: brightness(1.1);
+			}
+			.avatar {
+				position: relative;
+				width: 150px;
+				height: 150px;
+				background: url(img/1.jpg) no-repeat center center / 100% 100%;
+				border-radius: 50%;
+			}
+			.avatar::after {
+				content: "";
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				height: 100%;
+				background: inherit;
+				border-radius: inherit;
+				filter: blur(10px) brightness(90%) opacity(.8);
+				z-index: -1;
+			}
+			
+			input {
+				appearance: none;
+				outline: none;
+				border: none;
+				padding: 1rem;
+				border-bottom: 1px solid #ebebeb;
+				transition: all .2s ease-in-out;
+			}
+			
+			input:focus {
+				box-shadow: 0 3px 10px 1px rgba(0, 0, 0, .1);
+				transform: translateY(-.5rem)
+			}
+			.div
+			{	width:100px;
+				height:100px;
+				background:yellow;
+				transition:width 2s, height 2s;
+				-moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+				-webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+				-o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+			}
+			.div:hover
+			{	width:200px;
+				height:200px;
+				transform:rotate(180deg);
+				-moz-transform:rotate(180deg); /* Firefox 4 */
+				-webkit-transform:rotate(180deg); /* Safari and Chrome */
+				-o-transform:rotate(180deg); /* Opera */
+			}
+
+		</style>
+	</head>
+	<body> 
+		<div class="ball3 avatar">
+			HTML5为旧浏览器显示角色重置HTML5为
+		</div>
+		<input type="text" />
+		<div class="div">
+			
+		</div>
+	</body>
+</html>
