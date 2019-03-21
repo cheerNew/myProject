@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			body {
+				text-align: center;
+				font-family: 微软雅黑;
+			}
+
+			.fixedTable>thead>tr>th,
+			.fixedTable>tbody>tr>td {
+				width: 3% !important;
+			}
+
+			#fixedTab,
+			#grid {
+				width: 1300px;
+				border: 1px solid gray;
+			}
+
+			td,
+			th {
+				height: 35px;
+				text-align: center;
+			}
+
+			#contenter {
+				position: relative;
+				width: 800px;
+				margin: auto;
+				background-color: white;
+				border: 1px solid black;
+				position: relative;
+				overflow-x:auto;
+			}
+
+			#fixedDiv {
+				position: absolute;
+				left: 0;
+				overflow: hidden;
+			}
+
+			#fixedTab th {
+				background-color: #4ca9f7;
+				color: white;
+			}
+
+			#mainDiv {
+				width: 1300px;
+				height: 400px;
+				overflow: auto;
+				overflow-x: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="contenter">
+			<div id="fixedDiv">
+				<table id="fixedTab" class="fixedTable" border="1" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>爱好</th>
+							<th>学历</th>
+							<th>特长</th>
+							<th>性格</th>
+							<th>数学</th>
+							<th>语文</th>
+							<th>英语</th>
+							<th>体育</th>
+							<th>美术</th>
+							<th>音乐</th>
+							<th>早操</th>
+							<th>地理</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div id="mainDiv">
+				<table id="grid" class="fixedTable" border="1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+						<tr>
+							<td>sa</td>
+							<td>sf</td>
+							<td>sg</td>
+							<td>dd</td>
+							<td>zc</td>
+							<td>zc</td>
+							<td>vc</td>
+							<td>vb</td>
+							<td>fg</td>
+							<td>cn</td>
+							<td>sf</td>
+							<td>zx</td>
+							<td>cb</td>
+							<td>ub</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
